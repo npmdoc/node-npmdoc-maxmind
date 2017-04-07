@@ -1,0 +1,1832 @@
+<html><head></head><body><div class="apidocDiv">
+<style>
+/*csslint
+*/
+.apidocDiv {
+    background: #fff;
+    font-family: Arial, Helvetica, sans-serif;
+}
+.apidocDiv a[href] {
+    color: #33f;
+    font-weight: bold;
+    text-decoration: none;
+}
+.apidocDiv a[href]:hover {
+    text-decoration: underline;
+}
+.apidocCodeCommentSpan {
+    background: #bbf;
+    color: #000;
+    display: block;
+}
+.apidocCodeKeywordSpan {
+    color: #d00;
+    font-weight: bold;
+}
+.apidocCodePre {
+    background: #eef;
+    border: 1px solid;
+    color: #777;
+    padding: 5px;
+    white-space: pre-wrap;
+}
+.apidocFooterDiv {
+    margin-top: 20px;
+    text-align: center;
+}
+.apidocModuleLi {
+    margin-top: 10px;
+}
+.apidocSectionDiv {
+    border-top: 1px solid;
+    margin-top: 20px;
+}
+.apidocSignatureSpan {
+    color: #777;
+    font-weight: bold;
+}
+</style>
+<h1>api documentation for
+    <a href="https://github.com/runk/node-maxmind">maxmind (v2.2.0)</a>
+</h1>
+<h4>IP lookup using Maxmind databases</h4>
+<div class="apidocSectionDiv"><a href="#apidoc.tableOfContents" id="apidoc.tableOfContents"><h1>table of contents</h1></a><ol>
+
+    <li class="apidocModuleLi"><a href="#apidoc.module.maxmind">module maxmind</a><ol>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.maxmind.Reader">
+            function <span class="apidocSignatureSpan">maxmind.</span>Reader
+            <span class="apidocSignatureSpan">(db, opts)</span>
+            </a>
+
+        </li>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.maxmind.decoder">
+            function <span class="apidocSignatureSpan">maxmind.</span>decoder
+            <span class="apidocSignatureSpan">(db, baseOffset)</span>
+            </a>
+
+        </li>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.maxmind.init">
+            function <span class="apidocSignatureSpan">maxmind.</span>init
+            <span class="apidocSignatureSpan">()</span>
+            </a>
+
+        </li>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.maxmind.metadata">
+            function <span class="apidocSignatureSpan">maxmind.</span>metadata
+            <span class="apidocSignatureSpan">(db)</span>
+            </a>
+
+        </li>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.maxmind.open">
+            function <span class="apidocSignatureSpan">maxmind.</span>open
+            <span class="apidocSignatureSpan">(filepath, opts, cb)</span>
+            </a>
+
+        </li>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.maxmind.openSync">
+            function <span class="apidocSignatureSpan">maxmind.</span>openSync
+            <span class="apidocSignatureSpan">(filepath, opts)</span>
+            </a>
+
+        </li>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.maxmind.validate">
+            function <span class="apidocSignatureSpan">maxmind.</span>validate
+            <span class="apidocSignatureSpan">(ip)</span>
+            </a>
+
+        </li>
+
+        <li>
+
+            <span class="apidocSignatureSpan">object <span class="apidocSignatureSpan">maxmind.</span>Reader.prototype</span>
+
+        </li>
+
+        <li>
+
+            <span class="apidocSignatureSpan">object <span class="apidocSignatureSpan">maxmind.</span>decoder.prototype</span>
+
+        </li>
+
+        <li>
+
+            <span class="apidocSignatureSpan">object <span class="apidocSignatureSpan">maxmind.</span>ip</span>
+
+        </li>
+
+        <li>
+
+            <span class="apidocSignatureSpan">object <span class="apidocSignatureSpan">maxmind.</span>metadata.prototype</span>
+
+        </li>
+
+        <li>
+
+            <span class="apidocSignatureSpan">object <span class="apidocSignatureSpan">maxmind.</span>utils</span>
+
+        </li>
+
+    </ol></li>
+
+    <li class="apidocModuleLi"><a href="#apidoc.module.maxmind.Reader">module maxmind.Reader</a><ol>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.maxmind.Reader.Reader">
+            function <span class="apidocSignatureSpan">maxmind.</span>Reader
+            <span class="apidocSignatureSpan">(db, opts)</span>
+            </a>
+
+        </li>
+
+    </ol></li>
+
+    <li class="apidocModuleLi"><a href="#apidoc.module.maxmind.Reader.prototype">module maxmind.Reader.prototype</a><ol>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.maxmind.Reader.prototype.findAddressInTree">
+            function <span class="apidocSignatureSpan">maxmind.Reader.prototype.</span>findAddressInTree
+            <span class="apidocSignatureSpan">(ipAddress)</span>
+            </a>
+
+        </li>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.maxmind.Reader.prototype.get">
+            function <span class="apidocSignatureSpan">maxmind.Reader.prototype.</span>get
+            <span class="apidocSignatureSpan">(ipAddress)</span>
+            </a>
+
+        </li>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.maxmind.Reader.prototype.load">
+            function <span class="apidocSignatureSpan">maxmind.Reader.prototype.</span>load
+            <span class="apidocSignatureSpan">(db)</span>
+            </a>
+
+        </li>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.maxmind.Reader.prototype.resolveDataPointer">
+            function <span class="apidocSignatureSpan">maxmind.Reader.prototype.</span>resolveDataPointer
+            <span class="apidocSignatureSpan">(pointer)</span>
+            </a>
+
+        </li>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.maxmind.Reader.prototype.setupNodeReaderFn">
+            function <span class="apidocSignatureSpan">maxmind.Reader.prototype.</span>setupNodeReaderFn
+            <span class="apidocSignatureSpan">(recordSize)</span>
+            </a>
+
+        </li>
+
+    </ol></li>
+
+    <li class="apidocModuleLi"><a href="#apidoc.module.maxmind.decoder">module maxmind.decoder</a><ol>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.maxmind.decoder.decoder">
+            function <span class="apidocSignatureSpan">maxmind.</span>decoder
+            <span class="apidocSignatureSpan">(db, baseOffset)</span>
+            </a>
+
+        </li>
+
+    </ol></li>
+
+    <li class="apidocModuleLi"><a href="#apidoc.module.maxmind.decoder.prototype">module maxmind.decoder.prototype</a><ol>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.maxmind.decoder.prototype.decode">
+            function <span class="apidocSignatureSpan">maxmind.decoder.prototype.</span>decode
+            <span class="apidocSignatureSpan">(offset)</span>
+            </a>
+
+        </li>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.maxmind.decoder.prototype.decodeArray">
+            function <span class="apidocSignatureSpan">maxmind.decoder.prototype.</span>decodeArray
+            <span class="apidocSignatureSpan">(size, offset)</span>
+            </a>
+
+        </li>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.maxmind.decoder.prototype.decodeBigUint">
+            function <span class="apidocSignatureSpan">maxmind.decoder.prototype.</span>decodeBigUint
+            <span class="apidocSignatureSpan">(offset, size)</span>
+            </a>
+
+        </li>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.maxmind.decoder.prototype.decodeBoolean">
+            function <span class="apidocSignatureSpan">maxmind.decoder.prototype.</span>decodeBoolean
+            <span class="apidocSignatureSpan">(size)</span>
+            </a>
+
+        </li>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.maxmind.decoder.prototype.decodeByType">
+            function <span class="apidocSignatureSpan">maxmind.decoder.prototype.</span>decodeByType
+            <span class="apidocSignatureSpan">(type, offset, size)</span>
+            </a>
+
+        </li>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.maxmind.decoder.prototype.decodeBytes">
+            function <span class="apidocSignatureSpan">maxmind.decoder.prototype.</span>decodeBytes
+            <span class="apidocSignatureSpan">(offset, size)</span>
+            </a>
+
+        </li>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.maxmind.decoder.prototype.decodeDouble">
+            function <span class="apidocSignatureSpan">maxmind.decoder.prototype.</span>decodeDouble
+            <span class="apidocSignatureSpan">(offset)</span>
+            </a>
+
+        </li>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.maxmind.decoder.prototype.decodeFloat">
+            function <span class="apidocSignatureSpan">maxmind.decoder.prototype.</span>decodeFloat
+            <span class="apidocSignatureSpan">(offset)</span>
+            </a>
+
+        </li>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.maxmind.decoder.prototype.decodeInt32">
+            function <span class="apidocSignatureSpan">maxmind.decoder.prototype.</span>decodeInt32
+            <span class="apidocSignatureSpan">(offset, size)</span>
+            </a>
+
+        </li>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.maxmind.decoder.prototype.decodeMap">
+            function <span class="apidocSignatureSpan">maxmind.decoder.prototype.</span>decodeMap
+            <span class="apidocSignatureSpan">(size, offset)</span>
+            </a>
+
+        </li>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.maxmind.decoder.prototype.decodePointer">
+            function <span class="apidocSignatureSpan">maxmind.decoder.prototype.</span>decodePointer
+            <span class="apidocSignatureSpan">(ctrlByte, offset)</span>
+            </a>
+
+        </li>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.maxmind.decoder.prototype.decodeString">
+            function <span class="apidocSignatureSpan">maxmind.decoder.prototype.</span>decodeString
+            <span class="apidocSignatureSpan">(offset, size)</span>
+            </a>
+
+        </li>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.maxmind.decoder.prototype.decodeUint">
+            function <span class="apidocSignatureSpan">maxmind.decoder.prototype.</span>decodeUint
+            <span class="apidocSignatureSpan">(offset, size)</span>
+            </a>
+
+        </li>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.maxmind.decoder.prototype.sizeFromCtrlByte">
+            function <span class="apidocSignatureSpan">maxmind.decoder.prototype.</span>sizeFromCtrlByte
+            <span class="apidocSignatureSpan">(ctrlByte, offset)</span>
+            </a>
+
+        </li>
+
+    </ol></li>
+
+    <li class="apidocModuleLi"><a href="#apidoc.module.maxmind.ip">module maxmind.ip</a><ol>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.maxmind.ip.bitAt">
+            function <span class="apidocSignatureSpan">maxmind.ip.</span>bitAt
+            <span class="apidocSignatureSpan">(rawAddress, idx)</span>
+            </a>
+
+        </li>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.maxmind.ip.parse">
+            function <span class="apidocSignatureSpan">maxmind.ip.</span>parse
+            <span class="apidocSignatureSpan">(ip)</span>
+            </a>
+
+        </li>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.maxmind.ip.validate">
+            function <span class="apidocSignatureSpan">maxmind.ip.</span>validate
+            <span class="apidocSignatureSpan">(ip)</span>
+            </a>
+
+        </li>
+
+    </ol></li>
+
+    <li class="apidocModuleLi"><a href="#apidoc.module.maxmind.metadata">module maxmind.metadata</a><ol>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.maxmind.metadata.metadata">
+            function <span class="apidocSignatureSpan">maxmind.</span>metadata
+            <span class="apidocSignatureSpan">(db)</span>
+            </a>
+
+        </li>
+
+    </ol></li>
+
+    <li class="apidocModuleLi"><a href="#apidoc.module.maxmind.metadata.prototype">module maxmind.metadata.prototype</a><ol>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.maxmind.metadata.prototype.findStart">
+            function <span class="apidocSignatureSpan">maxmind.metadata.prototype.</span>findStart
+            <span class="apidocSignatureSpan">(db)</span>
+            </a>
+
+        </li>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.maxmind.metadata.prototype.isLegacyFormat">
+            function <span class="apidocSignatureSpan">maxmind.metadata.prototype.</span>isLegacyFormat
+            <span class="apidocSignatureSpan">(db)</span>
+            </a>
+
+        </li>
+
+    </ol></li>
+
+    <li class="apidocModuleLi"><a href="#apidoc.module.maxmind.utils">module maxmind.utils</a><ol>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.maxmind.utils.concat2">
+            function <span class="apidocSignatureSpan">maxmind.utils.</span>concat2
+            <span class="apidocSignatureSpan">(a, b)</span>
+            </a>
+
+        </li>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.maxmind.utils.concat3">
+            function <span class="apidocSignatureSpan">maxmind.utils.</span>concat3
+            <span class="apidocSignatureSpan">(a, b, c)</span>
+            </a>
+
+        </li>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.maxmind.utils.concat4">
+            function <span class="apidocSignatureSpan">maxmind.utils.</span>concat4
+            <span class="apidocSignatureSpan">(a, b, c, d)</span>
+            </a>
+
+        </li>
+
+        <li>
+
+            <span class="apidocSignatureSpan">string <span class="apidocSignatureSpan">maxmind.utils.</span>legacyErrorMessage</span>
+
+        </li>
+
+    </ol></li>
+
+</ol></div>
+
+<div class="apidocSectionDiv">
+<h1><a href="#apidoc.module.maxmind" id="apidoc.module.maxmind">module maxmind</a></h1>
+
+
+    <h2>
+        <a href="#apidoc.element.maxmind.Reader" id="apidoc.element.maxmind.Reader">
+        function <span class="apidocSignatureSpan">maxmind.</span>Reader
+        <span class="apidocSignatureSpan">(db, opts)</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">function Reader(db, opts) {
+  opts = opts || {};
+  opts.cache = opts.cache || {};
+  opts.cache.max = opts.cache.max || 50000;
+  opts.cache.maxAge = opts.cache.maxAge || 60 * 60 * 1000; // 1hr
+
+  this.cache = LRU(opts.cache);
+  this.load(db);
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">n/a</pre></li>
+    </ul>
+
+
+
+    <h2>
+        <a href="#apidoc.element.maxmind.decoder" id="apidoc.element.maxmind.decoder">
+        function <span class="apidocSignatureSpan">maxmind.</span>decoder
+        <span class="apidocSignatureSpan">(db, baseOffset)</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">function Decoder(db, baseOffset) {
+  assert(this.db = db, 'File stream is required');
+  this.baseOffset = baseOffset || 0;
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">n/a</pre></li>
+    </ul>
+
+
+
+    <h2>
+        <a href="#apidoc.element.maxmind.init" id="apidoc.element.maxmind.init">
+        function <span class="apidocSignatureSpan">maxmind.</span>init
+        <span class="apidocSignatureSpan">()</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">init = function () {
+  throw new Error(utils.legacyErrorMessage);
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">n/a</pre></li>
+    </ul>
+
+
+
+    <h2>
+        <a href="#apidoc.element.maxmind.metadata" id="apidoc.element.maxmind.metadata">
+        function <span class="apidocSignatureSpan">maxmind.</span>metadata
+        <span class="apidocSignatureSpan">(db)</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">function Metadata(db) {
+  var offset = this.findStart(db);
+  var decoder = new Decoder(db, offset);
+  var metadata = decoder.decode(offset).value;
+
+  if (!metadata) {
+    throw new Error(this.isLegacyFormat(db) ? utils.legacyErrorMessage : 'Cannot parse binary database');
+  }
+
+  this.binaryFormatMajorVersion = metadata.binary_format_major_version;
+  this.binaryFormatMinorVersion = metadata.binary_format_minor_version;
+  this.buildEpoch = new Date(metadata.build_epoch * 1000);
+  this.databaseType = metadata.database_type;
+  this.languages = metadata.languages;
+  this.description = metadata.description;
+  this.ipVersion = metadata.ip_version;
+  this.nodeCount = metadata.node_count;
+
+  this.recordSize = metadata.record_size;
+  assert([24, 28, 32].indexOf(this.recordSize) &gt; -1, 'Unsupported record size');
+
+  this.nodeByteSize = this.recordSize / 4;
+  this.searchTreeSize = this.nodeCount * this.nodeByteSize;
+
+  // Depth depends on the IP version, it's 32 for IPv4 and 128 for IPv6.
+  this.treeDepth = Math.pow(2, this.ipVersion + 1);
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">n/a</pre></li>
+    </ul>
+
+
+
+    <h2>
+        <a href="#apidoc.element.maxmind.open" id="apidoc.element.maxmind.open">
+        function <span class="apidocSignatureSpan">maxmind.</span>open
+        <span class="apidocSignatureSpan">(filepath, opts, cb)</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">open = function (filepath, opts, cb) {
+  if (!cb) cb = opts;
+  assert.equal(typeof cb, 'function', 'Callback function must be provided. \
+    If you want to open library synchronously, use maxmind.openSync function.');
+
+  fs.readFile(filepath, function(err, database) {
+    if (err) return cb(err);
+    if (isGzip(database)) {
+      return cb(new Error('Looks like you are passing in a file in gzip format, please use mmdb database instead.'));
+    }
+    var reader = new Reader(database, opts);
+    if (opts &amp;&amp; !!opts.watchForUpdates) {
+      fs.watch(filepath, function() {
+        fs.readFile(filepath, function(err, database) {
+          if (err) return cb(err);
+          reader.load(database);
+        });
+      });
+    }
+    cb(null, reader);
+  });
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">...
+
+
+## Usage
+
+```javascript
+var maxmind = require('maxmind');
+
+maxmind.<span class="apidocCodeKeywordSpan">open</span>('/path/to/GeoLite2-City.mmdb', (err, cityLookup) =&gt; {
+  var city = cityLookup.get('66.6.44.4');
+});
+
+maxmind.open('/path/to/GeoOrg.mmdb', (err, orgLookup) =&gt; {
+  var city = orgLookup.get('66.6.44.4');
+});
+...</pre></li>
+    </ul>
+
+
+
+    <h2>
+        <a href="#apidoc.element.maxmind.openSync" id="apidoc.element.maxmind.openSync">
+        function <span class="apidocSignatureSpan">maxmind.</span>openSync
+        <span class="apidocSignatureSpan">(filepath, opts)</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">openSync = function (filepath, opts) {
+  var reader = new Reader(fs.readFileSync(filepath), opts);
+  if (opts &amp;&amp; !!opts.watchForUpdates) {
+    fs.watch(filepath, function() {
+      reader.load(fs.readFileSync(filepath));
+    });
+  }
+
+  return reader;
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">...
+});
+
+// Be careful with sync version! Since mmdb files
+// are quite large (city database is about 100Mb)
+// `fs.readFileSync` blocks whole process while it
+// reads file into buffer.
+
+var cityLookup = maxmind.<span class="apidocCodeKeywordSpan">openSync</span>('/path/to/GeoLite2-City.mmdb');
+var city = cityLookup.get('66.6.44.4');
+
+var orgLookup = maxmind.openSync('/path/to/GeoOrg.mmdb');
+var organization = orgLookup.get('66.6.44.4');
+```
+...</pre></li>
+    </ul>
+
+
+
+    <h2>
+        <a href="#apidoc.element.maxmind.validate" id="apidoc.element.maxmind.validate">
+        function <span class="apidocSignatureSpan">maxmind.</span>validate
+        <span class="apidocSignatureSpan">(ip)</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">validate = function (ip) {
+  var version = net.isIP(ip);
+  return version === 4 || version === 6;
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">...
+
+
+## IP addresses validation
+
+Module supports validation for both IPv4 and IPv6:
+
+```javascript
+maxmind.<span class="apidocCodeKeywordSpan">validate</span>('66.6.44.4'); // returns true
+maxmind.validate('66.6.44.boom!'); // returns false
+
+maxmind.validate('2001:4860:0:1001::3004:ef68'); // returns true
+maxmind.validate('2001:4860:0:1001::3004:boom!'); // returns false
+```
+...</pre></li>
+    </ul>
+
+
+
+
+
+
+
+
+
+
+
+
+</div>
+
+<div class="apidocSectionDiv">
+<h1><a href="#apidoc.module.maxmind.Reader" id="apidoc.module.maxmind.Reader">module maxmind.Reader</a></h1>
+
+
+    <h2>
+        <a href="#apidoc.element.maxmind.Reader.Reader" id="apidoc.element.maxmind.Reader.Reader">
+        function <span class="apidocSignatureSpan">maxmind.</span>Reader
+        <span class="apidocSignatureSpan">(db, opts)</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">function Reader(db, opts) {
+  opts = opts || {};
+  opts.cache = opts.cache || {};
+  opts.cache.max = opts.cache.max || 50000;
+  opts.cache.maxAge = opts.cache.maxAge || 60 * 60 * 1000; // 1hr
+
+  this.cache = LRU(opts.cache);
+  this.load(db);
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">n/a</pre></li>
+    </ul>
+
+
+</div>
+
+<div class="apidocSectionDiv">
+<h1><a href="#apidoc.module.maxmind.Reader.prototype" id="apidoc.module.maxmind.Reader.prototype">module maxmind.Reader.prototype</a></h1>
+
+
+    <h2>
+        <a href="#apidoc.element.maxmind.Reader.prototype.findAddressInTree" id="apidoc.element.maxmind.Reader.prototype.findAddressInTree">
+        function <span class="apidocSignatureSpan">maxmind.Reader.prototype.</span>findAddressInTree
+        <span class="apidocSignatureSpan">(ipAddress)</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">findAddressInTree = function (ipAddress) {
+  var rawAddress = ipUtil.parse(ipAddress);
+  var nodeCount = this.metadata.nodeCount;
+
+  // When storing IPv4 addresses in an IPv6 tree, they are stored as-is, so they
+  // occupy the first 32-bits of the address space (from 0 to 2**32 - 1).
+  // Which means they're padded with zeros.
+  var ipStartBit = (this.metadata.ipVersion === 6 &amp;&amp; rawAddress.length === 4) ? 128 - 32 : 0;
+
+  // Binary search tree consists of certain (`nodeCount`) number of nodes. Tree
+  // depth depends on the ip version, it's 32 for IPv4 and 128 for IPv6. Each
+  // tree node has the same fixed length and usually 6-8 bytes. It consists
+  // of two records, left and right:
+  // |         node        |
+  // | 0x000000 | 0x000000 |
+  var bit;
+  var nodeNumber = ipStartBit;
+  var pointer, offset;
+
+  for (var i = ipStartBit; i &lt; this.metadata.treeDepth; i++) {
+    bit = ipUtil.bitAt(rawAddress, i - ipStartBit);
+    offset = nodeNumber * this.metadata.nodeByteSize;
+
+    pointer = bit ?
+      this.readNodeRight(offset) :
+      this.readNodeLeft(offset);
+
+    // Record value can point to one of three things:
+    // 1. Another node in the tree (most common case)
+    if (pointer &lt; nodeCount) {
+      nodeNumber = pointer;
+
+    // 2. Data section address with relevant information (less common case)
+    } else if (pointer &gt; nodeCount) {
+      return pointer;
+
+    // 3. Point to the value of `nodeCount`, which means IP address is unknown
+    } else {
+      return null;
+    }
+  }
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">n/a</pre></li>
+    </ul>
+
+
+
+    <h2>
+        <a href="#apidoc.element.maxmind.Reader.prototype.get" id="apidoc.element.maxmind.Reader.prototype.get">
+        function <span class="apidocSignatureSpan">maxmind.Reader.prototype.</span>get
+        <span class="apidocSignatureSpan">(ipAddress)</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">get = function (ipAddress) {
+  var pointer = this.findAddressInTree(ipAddress);
+  return pointer ? this.resolveDataPointer(pointer) : null;
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">...
+
+## Usage
+
+```javascript
+var maxmind = require('maxmind');
+
+maxmind.open('/path/to/GeoLite2-City.mmdb', (err, cityLookup) =&gt; {
+  var city = cityLookup.<span class="apidocCodeKeywordSpan">get</span>('66.6.44.4');
+});
+
+maxmind.open('/path/to/GeoOrg.mmdb', (err, orgLookup) =&gt; {
+  var city = orgLookup.get('66.6.44.4');
+});
+
+// Be careful with sync version! Since mmdb files
+...</pre></li>
+    </ul>
+
+
+
+    <h2>
+        <a href="#apidoc.element.maxmind.Reader.prototype.load" id="apidoc.element.maxmind.Reader.prototype.load">
+        function <span class="apidocSignatureSpan">maxmind.Reader.prototype.</span>load
+        <span class="apidocSignatureSpan">(db)</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">load = function (db) {
+  this.db = db;
+
+  this.metadata = new Metadata(this.db);
+  this.decoder = new Decoder(this.db, this.metadata.searchTreeSize + DATA_SECTION_SEPARATOR_SIZE);
+
+  this.setupNodeReaderFn(this.metadata.recordSize);
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">...
+      return cb(new Error('Looks like you are passing in a file in gzip format, please use mmdb database instead.'));
+    }
+    var reader = new Reader(database, opts);
+    if (opts &amp;&amp; !!opts.watchForUpdates) {
+      fs.watch(filepath, function() {
+        fs.readFile(filepath, function(err, database) {
+          if (err) return cb(err);
+          reader.<span class="apidocCodeKeywordSpan">load</span>(database);
+        });
+      });
+    }
+    cb(null, reader);
+  });
+};
+...</pre></li>
+    </ul>
+
+
+
+    <h2>
+        <a href="#apidoc.element.maxmind.Reader.prototype.resolveDataPointer" id="apidoc.element.maxmind.Reader.prototype.resolveDataPointer">
+        function <span class="apidocSignatureSpan">maxmind.Reader.prototype.</span>resolveDataPointer
+        <span class="apidocSignatureSpan">(pointer)</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">resolveDataPointer = function (pointer) {
+  if (this.cache.has(pointer)) {
+    return this.cache.get(pointer);
+  }
+
+  // In order to determine where in the file this offset really points to, we also
+  // need to know where the data section starts. This can be calculated by
+  // determining the size of the search tree in bytes and then adding an additional
+  // 16 bytes for the data section separator.
+  // So the final formula to determine the offset in the file is:
+  //     $offset_in_file = ( $record_value - $node_count )
+  //                       + $search_tree_size_in_bytes
+  var resolved = pointer - this.metadata.nodeCount + this.metadata.searchTreeSize;
+
+  var result = this.decoder.decode(resolved).value;
+  this.cache.set(pointer, result);
+  return result;
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">n/a</pre></li>
+    </ul>
+
+
+
+    <h2>
+        <a href="#apidoc.element.maxmind.Reader.prototype.setupNodeReaderFn" id="apidoc.element.maxmind.Reader.prototype.setupNodeReaderFn">
+        function <span class="apidocSignatureSpan">maxmind.Reader.prototype.</span>setupNodeReaderFn
+        <span class="apidocSignatureSpan">(recordSize)</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">setupNodeReaderFn = function (recordSize) {
+  switch (recordSize) {
+    case 24:
+      this.readNodeLeft = readNodeLeft24;
+      this.readNodeRight = readNodeRight24;
+      break;
+    case 28:
+      this.readNodeLeft = readNodeLeft28;
+      this.readNodeRight = readNodeRight28;
+      break;
+    case 32:
+      this.readNodeLeft = readNodeLeft32;
+      this.readNodeRight = readNodeRight32;
+      break;
+  }
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">n/a</pre></li>
+    </ul>
+
+
+</div>
+
+<div class="apidocSectionDiv">
+<h1><a href="#apidoc.module.maxmind.decoder" id="apidoc.module.maxmind.decoder">module maxmind.decoder</a></h1>
+
+
+    <h2>
+        <a href="#apidoc.element.maxmind.decoder.decoder" id="apidoc.element.maxmind.decoder.decoder">
+        function <span class="apidocSignatureSpan">maxmind.</span>decoder
+        <span class="apidocSignatureSpan">(db, baseOffset)</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">function Decoder(db, baseOffset) {
+  assert(this.db = db, 'File stream is required');
+  this.baseOffset = baseOffset || 0;
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">n/a</pre></li>
+    </ul>
+
+
+</div>
+
+<div class="apidocSectionDiv">
+<h1><a href="#apidoc.module.maxmind.decoder.prototype" id="apidoc.module.maxmind.decoder.prototype">module maxmind.decoder.prototype</a></h1>
+
+
+    <h2>
+        <a href="#apidoc.element.maxmind.decoder.prototype.decode" id="apidoc.element.maxmind.decoder.prototype.decode">
+        function <span class="apidocSignatureSpan">maxmind.decoder.prototype.</span>decode
+        <span class="apidocSignatureSpan">(offset)</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">decode = function (offset) {
+  var tmp,
+    ctrlByte = this.db[offset++],
+    type = types[ctrlByte &gt;&gt; 5];
+
+  if (type === 'pointer') {
+    tmp = this.decodePointer(ctrlByte, offset);
+    return cursor(this.decode(tmp.value).value, tmp.offset);
+  }
+
+  if (type === 'extended') {
+    tmp = this.db[offset] + 7;
+    if (tmp &lt; 8) {
+      throw new Error('Invalid Extended Type at offset ' + offset + ' val ' + tmp);
+    }
+
+    type = types[tmp];
+    offset++;
+  }
+
+  var size = this.sizeFromCtrlByte(ctrlByte, offset);
+  return this.decodeByType(type, size.offset, size.value);
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">...
+Decoder.prototype.decode = function(offset) {
+var tmp,
+  ctrlByte = this.db[offset++],
+  type = types[ctrlByte &gt;&gt; 5];
+
+if (type === 'pointer') {
+  tmp = this.decodePointer(ctrlByte, offset);
+  return cursor(this.<span class="apidocCodeKeywordSpan">decode</span>(tmp.value).value, tmp.offset);
+}
+
+if (type === 'extended') {
+  tmp = this.db[offset] + 7;
+  if (tmp &lt; 8) {
+    throw new Error('Invalid Extended Type at offset ' + offset + ' val ' + tmp);
+  }
+...</pre></li>
+    </ul>
+
+
+
+    <h2>
+        <a href="#apidoc.element.maxmind.decoder.prototype.decodeArray" id="apidoc.element.maxmind.decoder.prototype.decodeArray">
+        function <span class="apidocSignatureSpan">maxmind.decoder.prototype.</span>decodeArray
+        <span class="apidocSignatureSpan">(size, offset)</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">decodeArray = function (size, offset) {
+  var tmp;
+  var array = [];
+
+  for (var i = 0; i &lt; size; i++) {
+    tmp = this.decode(offset);
+    offset = tmp.offset;
+    array.push(tmp.value);
+  }
+
+  return cursor(array, offset);
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">...
+case 'map':
+  return this.decodeMap(size, offset);
+case 'uint32':
+  return cursor(this.decodeUint(offset, size), newOffset);
+case 'double':
+  return cursor(this.decodeDouble(offset, size), newOffset);
+case 'array':
+  return this.<span class="apidocCodeKeywordSpan">decodeArray</span>(size, offset);
+case 'boolean':
+  return cursor(this.decodeBoolean(size), offset);
+case 'float':
+  return cursor(this.decodeFloat(offset, size), newOffset);
+case 'bytes':
+  return cursor(this.decodeBytes(offset, size), newOffset);
+case 'uint16':
+...</pre></li>
+    </ul>
+
+
+
+    <h2>
+        <a href="#apidoc.element.maxmind.decoder.prototype.decodeBigUint" id="apidoc.element.maxmind.decoder.prototype.decodeBigUint">
+        function <span class="apidocSignatureSpan">maxmind.decoder.prototype.</span>decodeBigUint
+        <span class="apidocSignatureSpan">(offset, size)</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">decodeBigUint = function (offset, size) {
+  var buffer = new Buffer(size);
+  this.db.copy(buffer, 0, offset, offset + size);
+
+  var integer = 0;
+  var numberOfLongs = size / 4;
+  for (var i = 0; i &lt; numberOfLongs; i++) {
+    integer = bigInt(integer).multiply(4294967296).add(buffer.readUInt32BE(i &lt;&lt; 2, true));
+  }
+
+  return integer.toString();
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">...
+Decoder.prototype.decodeUint = function(offset, size) {
+  switch (size) {
+    case 0: return 0;
+    case 1: return this.db[offset];
+    case 2: return utils.concat2(this.db[offset + 0], this.db[offset + 1]);
+    case 3: return utils.concat3(this.db[offset + 0], this.db[offset + 1], this.db[offset + 2]);
+    case 4: return utils.concat4(this.db[offset + 0], this.db[offset + 1], this.db[offset + 2], this.db[offset + 3]);
+    case 8: return this.<span class="apidocCodeKeywordSpan">decodeBigUint</span>(offset, size);
+    case 16: return this.decodeBigUint(offset, size);
+  }
+  return 0;
+};
+
+
+Decoder.prototype.decodeBigUint = function(offset, size) {
+...</pre></li>
+    </ul>
+
+
+
+    <h2>
+        <a href="#apidoc.element.maxmind.decoder.prototype.decodeBoolean" id="apidoc.element.maxmind.decoder.prototype.decodeBoolean">
+        function <span class="apidocSignatureSpan">maxmind.decoder.prototype.</span>decodeBoolean
+        <span class="apidocSignatureSpan">(size)</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">decodeBoolean = function (size) {
+  return size !== 0;
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">...
+case 'uint32':
+  return cursor(this.decodeUint(offset, size), newOffset);
+case 'double':
+  return cursor(this.decodeDouble(offset, size), newOffset);
+case 'array':
+  return this.decodeArray(size, offset);
+case 'boolean':
+  return cursor(this.<span class="apidocCodeKeywordSpan">decodeBoolean</span>(size), offset);
+case 'float':
+  return cursor(this.decodeFloat(offset, size), newOffset);
+case 'bytes':
+  return cursor(this.decodeBytes(offset, size), newOffset);
+case 'uint16':
+  return cursor(this.decodeUint(offset, size), newOffset);
+case 'int32':
+...</pre></li>
+    </ul>
+
+
+
+    <h2>
+        <a href="#apidoc.element.maxmind.decoder.prototype.decodeByType" id="apidoc.element.maxmind.decoder.prototype.decodeByType">
+        function <span class="apidocSignatureSpan">maxmind.decoder.prototype.</span>decodeByType
+        <span class="apidocSignatureSpan">(type, offset, size)</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">decodeByType = function (type, offset, size) {
+  var newOffset = offset + size;
+
+  // ipv4 types occurrence stats:
+  // 3618591 x utf8_string
+  // 448163 x map
+  // 175085 x uint32
+  // 83040 x double
+  // 24745 x array
+  // 3 x uint16
+  // 1 x uint64
+  // 14 x boolean
+  switch (type) {
+    case 'utf8_string':
+      return cursor(this.decodeString(offset, size), newOffset);
+    case 'map':
+      return this.decodeMap(size, offset);
+    case 'uint32':
+      return cursor(this.decodeUint(offset, size), newOffset);
+    case 'double':
+      return cursor(this.decodeDouble(offset, size), newOffset);
+    case 'array':
+      return this.decodeArray(size, offset);
+    case 'boolean':
+      return cursor(this.decodeBoolean(size), offset);
+    case 'float':
+      return cursor(this.decodeFloat(offset, size), newOffset);
+    case 'bytes':
+      return cursor(this.decodeBytes(offset, size), newOffset);
+    case 'uint16':
+      return cursor(this.decodeUint(offset, size), newOffset);
+    case 'int32':
+      return cursor(this.decodeInt32(offset, size), newOffset);
+    case 'uint64':
+      return cursor(this.decodeUint(offset, size), newOffset);
+    case 'uint128':
+      return cursor(this.decodeUint(offset, size), newOffset);
+  }
+
+  throw new Error('Unknown type ' + type + ' at offset ' + offset);
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">...
+  }
+
+  type = types[tmp];
+  offset++;
+}
+
+var size = this.sizeFromCtrlByte(ctrlByte, offset);
+return this.<span class="apidocCodeKeywordSpan">decodeByType</span>(type, size.offset, size.value);
+};
+
+
+Decoder.prototype.decodeByType = function(type, offset, size) {
+var newOffset = offset + size;
+
+// ipv4 types occurrence stats:
+...</pre></li>
+    </ul>
+
+
+
+    <h2>
+        <a href="#apidoc.element.maxmind.decoder.prototype.decodeBytes" id="apidoc.element.maxmind.decoder.prototype.decodeBytes">
+        function <span class="apidocSignatureSpan">maxmind.decoder.prototype.</span>decodeBytes
+        <span class="apidocSignatureSpan">(offset, size)</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">decodeBytes = function (offset, size) {
+  return this.db.slice(offset, offset + size);
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">...
+case 'array':
+  return this.decodeArray(size, offset);
+case 'boolean':
+  return cursor(this.decodeBoolean(size), offset);
+case 'float':
+  return cursor(this.decodeFloat(offset, size), newOffset);
+case 'bytes':
+  return cursor(this.<span class="apidocCodeKeywordSpan">decodeBytes</span>(offset, size), newOffset);
+case 'uint16':
+  return cursor(this.decodeUint(offset, size), newOffset);
+case 'int32':
+  return cursor(this.decodeInt32(offset, size), newOffset);
+case 'uint64':
+  return cursor(this.decodeUint(offset, size), newOffset);
+case 'uint128':
+...</pre></li>
+    </ul>
+
+
+
+    <h2>
+        <a href="#apidoc.element.maxmind.decoder.prototype.decodeDouble" id="apidoc.element.maxmind.decoder.prototype.decodeDouble">
+        function <span class="apidocSignatureSpan">maxmind.decoder.prototype.</span>decodeDouble
+        <span class="apidocSignatureSpan">(offset)</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">decodeDouble = function (offset) {
+  return this.db.readDoubleBE(offset, true);
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">...
+case 'utf8_string':
+  return cursor(this.decodeString(offset, size), newOffset);
+case 'map':
+  return this.decodeMap(size, offset);
+case 'uint32':
+  return cursor(this.decodeUint(offset, size), newOffset);
+case 'double':
+  return cursor(this.<span class="apidocCodeKeywordSpan">decodeDouble</span>(offset, size), newOffset);
+case 'array':
+  return this.decodeArray(size, offset);
+case 'boolean':
+  return cursor(this.decodeBoolean(size), offset);
+case 'float':
+  return cursor(this.decodeFloat(offset, size), newOffset);
+case 'bytes':
+...</pre></li>
+    </ul>
+
+
+
+    <h2>
+        <a href="#apidoc.element.maxmind.decoder.prototype.decodeFloat" id="apidoc.element.maxmind.decoder.prototype.decodeFloat">
+        function <span class="apidocSignatureSpan">maxmind.decoder.prototype.</span>decodeFloat
+        <span class="apidocSignatureSpan">(offset)</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">decodeFloat = function (offset) {
+  return this.db.readFloatBE(offset, true);
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">...
+case 'double':
+  return cursor(this.decodeDouble(offset, size), newOffset);
+case 'array':
+  return this.decodeArray(size, offset);
+case 'boolean':
+  return cursor(this.decodeBoolean(size), offset);
+case 'float':
+  return cursor(this.<span class="apidocCodeKeywordSpan">decodeFloat</span>(offset, size), newOffset);
+case 'bytes':
+  return cursor(this.decodeBytes(offset, size), newOffset);
+case 'uint16':
+  return cursor(this.decodeUint(offset, size), newOffset);
+case 'int32':
+  return cursor(this.decodeInt32(offset, size), newOffset);
+case 'uint64':
+...</pre></li>
+    </ul>
+
+
+
+    <h2>
+        <a href="#apidoc.element.maxmind.decoder.prototype.decodeInt32" id="apidoc.element.maxmind.decoder.prototype.decodeInt32">
+        function <span class="apidocSignatureSpan">maxmind.decoder.prototype.</span>decodeInt32
+        <span class="apidocSignatureSpan">(offset, size)</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">decodeInt32 = function (offset, size) {
+  if (size == 0) return 0;
+  return this.db.readInt32BE(offset, true);
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">...
+  case 'float':
+    return cursor(this.decodeFloat(offset, size), newOffset);
+  case 'bytes':
+    return cursor(this.decodeBytes(offset, size), newOffset);
+  case 'uint16':
+    return cursor(this.decodeUint(offset, size), newOffset);
+  case 'int32':
+    return cursor(this.<span class="apidocCodeKeywordSpan">decodeInt32</span>(offset, size), newOffset);
+  case 'uint64':
+    return cursor(this.decodeUint(offset, size), newOffset);
+  case 'uint128':
+    return cursor(this.decodeUint(offset, size), newOffset);
+}
+
+throw new Error('Unknown type ' + type + ' at offset ' + offset);
+...</pre></li>
+    </ul>
+
+
+
+    <h2>
+        <a href="#apidoc.element.maxmind.decoder.prototype.decodeMap" id="apidoc.element.maxmind.decoder.prototype.decodeMap">
+        function <span class="apidocSignatureSpan">maxmind.decoder.prototype.</span>decodeMap
+        <span class="apidocSignatureSpan">(size, offset)</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">decodeMap = function (size, offset) {
+  var tmp;
+  var key;
+  var map = {};
+
+  for (var i = 0; i &lt; size; i++) {
+    tmp = this.decode(offset);
+    key = tmp.value;
+    tmp = this.decode(tmp.offset);
+    offset = tmp.offset;
+    map[key] = tmp.value;
+  }
+
+  return cursor(map, offset);
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">...
+// 3 x uint16
+// 1 x uint64
+// 14 x boolean
+switch (type) {
+  case 'utf8_string':
+    return cursor(this.decodeString(offset, size), newOffset);
+  case 'map':
+    return this.<span class="apidocCodeKeywordSpan">decodeMap</span>(size, offset);
+  case 'uint32':
+    return cursor(this.decodeUint(offset, size), newOffset);
+  case 'double':
+    return cursor(this.decodeDouble(offset, size), newOffset);
+  case 'array':
+    return this.decodeArray(size, offset);
+  case 'boolean':
+...</pre></li>
+    </ul>
+
+
+
+    <h2>
+        <a href="#apidoc.element.maxmind.decoder.prototype.decodePointer" id="apidoc.element.maxmind.decoder.prototype.decodePointer">
+        function <span class="apidocSignatureSpan">maxmind.decoder.prototype.</span>decodePointer
+        <span class="apidocSignatureSpan">(ctrlByte, offset)</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">decodePointer = function (ctrlByte, offset) {
+  // Pointers use the last five bits in the control byte to calculate the pointer value.
+
+  // To calculate the pointer value, we start by subdiving the five bits into two
+  // groups. The first two bits indicate the size, and the next three bits are part
+  // of the value, so we end up with a control byte breaking down like this:
+  // 001SSVVV.
+  var pointerSize = ((ctrlByte &gt;&gt; 3) &amp; 3);
+
+  var pointer = this.baseOffset + pointerValueOffset[pointerSize];
+  var packed = 0;
+
+  // The size can be 0, 1, 2, or 3.
+
+  // If the size is 0, the pointer is built by appending the next byte to the last
+  // three bits to produce an 11-bit value.
+  if (pointerSize === 0) {
+    packed = utils.concat2(ctrlByte &amp; 7, this.db[offset]);
+
+  // If the size is 1, the pointer is built by appending the next two bytes to the
+  // last three bits to produce a 19-bit value + 2048.
+  } else if (pointerSize === 1) {
+    packed = utils.concat3(ctrlByte &amp; 7, this.db[offset], this.db[offset + 1]);
+
+  // If the size is 2, the pointer is built by appending the next three bytes to the
+  // last three bits to produce a 27-bit value + 526336.
+  } else if (pointerSize === 2) {
+    packed = utils.concat4(ctrlByte &amp; 7, this.db[offset], this.db[offset + 1], this.db[offset + 2]);
+
+  // At next point `size` is always 3.
+  // Finally, if the size is 3, the pointer's value is contained in the next four
+  // bytes as a 32-bit value. In this case, the last three bits of the control byte
+  // are ignored.
+  } else {
+    packed = this.db.readUInt32BE(offset, true);
+  }
+
+  offset += pointerSize + 1;
+  return cursor(pointer + packed, offset);
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">...
+
+Decoder.prototype.decode = function(offset) {
+var tmp,
+  ctrlByte = this.db[offset++],
+  type = types[ctrlByte &gt;&gt; 5];
+
+if (type === 'pointer') {
+  tmp = this.<span class="apidocCodeKeywordSpan">decodePointer</span>(ctrlByte, offset);
+  return cursor(this.decode(tmp.value).value, tmp.offset);
+}
+
+if (type === 'extended') {
+  tmp = this.db[offset] + 7;
+  if (tmp &lt; 8) {
+    throw new Error('Invalid Extended Type at offset ' + offset + ' val ' + tmp);
+...</pre></li>
+    </ul>
+
+
+
+    <h2>
+        <a href="#apidoc.element.maxmind.decoder.prototype.decodeString" id="apidoc.element.maxmind.decoder.prototype.decodeString">
+        function <span class="apidocSignatureSpan">maxmind.decoder.prototype.</span>decodeString
+        <span class="apidocSignatureSpan">(offset, size)</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">decodeString = function (offset, size) {
+  return this.db.utf8Slice(offset, offset + size);
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">...
+// 83040 x double
+// 24745 x array
+// 3 x uint16
+// 1 x uint64
+// 14 x boolean
+switch (type) {
+  case 'utf8_string':
+    return cursor(this.<span class="apidocCodeKeywordSpan">decodeString</span>(offset, size), newOffset);
+  case 'map':
+    return this.decodeMap(size, offset);
+  case 'uint32':
+    return cursor(this.decodeUint(offset, size), newOffset);
+  case 'double':
+    return cursor(this.decodeDouble(offset, size), newOffset);
+  case 'array':
+...</pre></li>
+    </ul>
+
+
+
+    <h2>
+        <a href="#apidoc.element.maxmind.decoder.prototype.decodeUint" id="apidoc.element.maxmind.decoder.prototype.decodeUint">
+        function <span class="apidocSignatureSpan">maxmind.decoder.prototype.</span>decodeUint
+        <span class="apidocSignatureSpan">(offset, size)</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">decodeUint = function (offset, size) {
+  switch (size) {
+    case 0: return 0;
+    case 1: return this.db[offset];
+    case 2: return utils.concat2(this.db[offset + 0], this.db[offset + 1]);
+    case 3: return utils.concat3(this.db[offset + 0], this.db[offset + 1], this.db[offset + 2]);
+    case 4: return utils.concat4(this.db[offset + 0], this.db[offset + 1], this.db[offset + 2], this.db[offset + 3]);
+    case 8: return this.decodeBigUint(offset, size);
+    case 16: return this.decodeBigUint(offset, size);
+  }
+  return 0;
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">...
+// 14 x boolean
+switch (type) {
+  case 'utf8_string':
+    return cursor(this.decodeString(offset, size), newOffset);
+  case 'map':
+    return this.decodeMap(size, offset);
+  case 'uint32':
+    return cursor(this.<span class="apidocCodeKeywordSpan">decodeUint</span>(offset, size), newOffset);
+  case 'double':
+    return cursor(this.decodeDouble(offset, size), newOffset);
+  case 'array':
+    return this.decodeArray(size, offset);
+  case 'boolean':
+    return cursor(this.decodeBoolean(size), offset);
+  case 'float':
+...</pre></li>
+    </ul>
+
+
+
+    <h2>
+        <a href="#apidoc.element.maxmind.decoder.prototype.sizeFromCtrlByte" id="apidoc.element.maxmind.decoder.prototype.sizeFromCtrlByte">
+        function <span class="apidocSignatureSpan">maxmind.decoder.prototype.</span>sizeFromCtrlByte
+        <span class="apidocSignatureSpan">(ctrlByte, offset)</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">sizeFromCtrlByte = function (ctrlByte, offset) {
+  // The first three bits of the control byte tell you what type the field is. If
+  // these bits are all 0, then this is an "extended" type, which means that the
+  // *next* byte contains the actual type. Otherwise, the first three bits will
+  // contain a number from 1 to 7, the actual type for the field.
+  // var type = ctrlByte &gt;&gt; 3;
+
+  // The next five bits in the control byte tell you how long the data field's
+  // payload is, except for maps and pointers. Maps and pointers use this size
+  // information a bit differently.``
+
+  var size = ctrlByte &amp; 0x1f;
+
+  // If the five bits are smaller than 29, then those bits are the payload size in
+  // bytes. For example:
+  //   01000010          UTF-8 string - 2 bytes long
+  //   01011100          UTF-8 string - 28 bytes long
+  //   11000001          unsigned 32-bit int - 1 byte long
+  //   00000011 00000011 unsigned 128-bit int - 3 bytes long
+  if (size &lt; 29)
+    return cursor(size, offset);
+
+  // If the value is 29, then the size is 29 + *the next byte after the type
+  // specifying bytes as an unsigned integer*.
+  if (size === 29)
+    return cursor(29 + this.db[offset], offset + 1);
+
+  // If the value is 30, then the size is 285 + *the next two bytes after the type
+  // specifying bytes as a single unsigned integer*.
+  if (size === 30)
+    return cursor(285 + this.db.readUInt16BE(offset, false), offset + 2);
+
+  // At this point `size` is always 31.
+  // If the value is 31, then the size is 65,821 + *the next three bytes after the
+  // type specifying bytes as a single unsigned integer*.
+  return cursor(
+    65821 + utils.concat3(this.db[offset], this.db[offset + 1], this.db[offset + 2]),
+    offset + 3
+  );
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">...
+    throw new Error('Invalid Extended Type at offset ' + offset + ' val ' + tmp);
+  }
+
+  type = types[tmp];
+  offset++;
+}
+
+var size = this.<span class="apidocCodeKeywordSpan">sizeFromCtrlByte</span>(ctrlByte, offset);
+return this.decodeByType(type, size.offset, size.value);
+};
+
+
+Decoder.prototype.decodeByType = function(type, offset, size) {
+var newOffset = offset + size;
+...</pre></li>
+    </ul>
+
+
+</div>
+
+<div class="apidocSectionDiv">
+<h1><a href="#apidoc.module.maxmind.ip" id="apidoc.module.maxmind.ip">module maxmind.ip</a></h1>
+
+
+    <h2>
+        <a href="#apidoc.element.maxmind.ip.bitAt" id="apidoc.element.maxmind.ip.bitAt">
+        function <span class="apidocSignatureSpan">maxmind.ip.</span>bitAt
+        <span class="apidocSignatureSpan">(rawAddress, idx)</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">bitAt = function (rawAddress, idx) {
+  // 8 bits per octet in the buffer (&gt;&gt;3 is slightly faster than Math.floor(idx/8))
+  var bufIdx = idx &gt;&gt; 3;
+
+  // Offset within the octet (basicallg equivalent to 8  - (idx % 8))
+  var bitIdx = 7 ^ (idx &amp; 7);
+
+  // Shift the offset rightwards by bitIdx bits and &amp; it to grab the bit
+  return (rawAddress[bufIdx] &gt;&gt;&gt; bitIdx) &amp; 1;
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">n/a</pre></li>
+    </ul>
+
+
+
+    <h2>
+        <a href="#apidoc.element.maxmind.ip.parse" id="apidoc.element.maxmind.ip.parse">
+        function <span class="apidocSignatureSpan">maxmind.ip.</span>parse
+        <span class="apidocSignatureSpan">(ip)</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">parse = function (ip) {
+  return (ip.indexOf(':') === -1) ? parseIPv4(ip) : parseIPv6(ip);
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">n/a</pre></li>
+    </ul>
+
+
+
+    <h2>
+        <a href="#apidoc.element.maxmind.ip.validate" id="apidoc.element.maxmind.ip.validate">
+        function <span class="apidocSignatureSpan">maxmind.ip.</span>validate
+        <span class="apidocSignatureSpan">(ip)</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">validate = function (ip) {
+  var version = net.isIP(ip);
+  return version === 4 || version === 6;
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">...
+
+
+## IP addresses validation
+
+Module supports validation for both IPv4 and IPv6:
+
+```javascript
+maxmind.<span class="apidocCodeKeywordSpan">validate</span>('66.6.44.4'); // returns true
+maxmind.validate('66.6.44.boom!'); // returns false
+
+maxmind.validate('2001:4860:0:1001::3004:ef68'); // returns true
+maxmind.validate('2001:4860:0:1001::3004:boom!'); // returns false
+```
+...</pre></li>
+    </ul>
+
+
+</div>
+
+<div class="apidocSectionDiv">
+<h1><a href="#apidoc.module.maxmind.metadata" id="apidoc.module.maxmind.metadata">module maxmind.metadata</a></h1>
+
+
+    <h2>
+        <a href="#apidoc.element.maxmind.metadata.metadata" id="apidoc.element.maxmind.metadata.metadata">
+        function <span class="apidocSignatureSpan">maxmind.</span>metadata
+        <span class="apidocSignatureSpan">(db)</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">function Metadata(db) {
+  var offset = this.findStart(db);
+  var decoder = new Decoder(db, offset);
+  var metadata = decoder.decode(offset).value;
+
+  if (!metadata) {
+    throw new Error(this.isLegacyFormat(db) ? utils.legacyErrorMessage : 'Cannot parse binary database');
+  }
+
+  this.binaryFormatMajorVersion = metadata.binary_format_major_version;
+  this.binaryFormatMinorVersion = metadata.binary_format_minor_version;
+  this.buildEpoch = new Date(metadata.build_epoch * 1000);
+  this.databaseType = metadata.database_type;
+  this.languages = metadata.languages;
+  this.description = metadata.description;
+  this.ipVersion = metadata.ip_version;
+  this.nodeCount = metadata.node_count;
+
+  this.recordSize = metadata.record_size;
+  assert([24, 28, 32].indexOf(this.recordSize) &gt; -1, 'Unsupported record size');
+
+  this.nodeByteSize = this.recordSize / 4;
+  this.searchTreeSize = this.nodeCount * this.nodeByteSize;
+
+  // Depth depends on the IP version, it's 32 for IPv4 and 128 for IPv6.
+  this.treeDepth = Math.pow(2, this.ipVersion + 1);
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">n/a</pre></li>
+    </ul>
+
+
+</div>
+
+<div class="apidocSectionDiv">
+<h1><a href="#apidoc.module.maxmind.metadata.prototype" id="apidoc.module.maxmind.metadata.prototype">module maxmind.metadata.prototype</a></h1>
+
+
+    <h2>
+        <a href="#apidoc.element.maxmind.metadata.prototype.findStart" id="apidoc.element.maxmind.metadata.prototype.findStart">
+        function <span class="apidocSignatureSpan">maxmind.metadata.prototype.</span>findStart
+        <span class="apidocSignatureSpan">(db)</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">findStart = function (db) {
+  var found = 0,
+    mlen = METADATA_START_MARKER.length - 1,
+    fsize = db.length - 1;
+
+  while (found &lt;= mlen &amp;&amp; fsize-- &gt; 0) {
+    found += (db[fsize] === METADATA_START_MARKER[mlen - found]) ? 1 : -found;
+  }
+  return fsize + found;
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">...
+
+var METADATA_START_MARKER = new Buffer('ABCDEF4D61784D696E642E636F6D', 'hex');
+
+
+module.exports = Metadata;
+
+function Metadata(db) {
+var offset = this.<span class="apidocCodeKeywordSpan">findStart</span>(db);
+var decoder = new Decoder(db, offset);
+var metadata = decoder.decode(offset).value;
+
+if (!metadata) {
+  throw new Error(this.isLegacyFormat(db) ? utils.legacyErrorMessage : 'Cannot parse binary database');
+}
+...</pre></li>
+    </ul>
+
+
+
+    <h2>
+        <a href="#apidoc.element.maxmind.metadata.prototype.isLegacyFormat" id="apidoc.element.maxmind.metadata.prototype.isLegacyFormat">
+        function <span class="apidocSignatureSpan">maxmind.metadata.prototype.</span>isLegacyFormat
+        <span class="apidocSignatureSpan">(db)</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">isLegacyFormat = function (db) {
+  var structureInfoMaxSize = 20;
+
+  for (var i = 0; i &lt; structureInfoMaxSize; i++) {
+    var delim = db.slice(db.length - 3 - i, db.length - i);
+
+    // Look for [0xff, 0xff, 0xff] metadata delimeter
+    if (delim[0] === 255 &amp;&amp; delim[1] === 255 &amp;&amp; delim[2] === 255) {
+      return true;
+    }
+  }
+
+  return false;
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">...
+
+function Metadata(db) {
+var offset = this.findStart(db);
+var decoder = new Decoder(db, offset);
+var metadata = decoder.decode(offset).value;
+
+if (!metadata) {
+  throw new Error(this.<span class="apidocCodeKeywordSpan">isLegacyFormat</span>(db) ? utils.legacyErrorMessage : 'Cannot parse
+ binary database');
+}
+
+this.binaryFormatMajorVersion = metadata.binary_format_major_version;
+this.binaryFormatMinorVersion = metadata.binary_format_minor_version;
+this.buildEpoch = new Date(metadata.build_epoch * 1000);
+this.databaseType = metadata.database_type;
+this.languages = metadata.languages;
+...</pre></li>
+    </ul>
+
+
+</div>
+
+<div class="apidocSectionDiv">
+<h1><a href="#apidoc.module.maxmind.utils" id="apidoc.module.maxmind.utils">module maxmind.utils</a></h1>
+
+
+    <h2>
+        <a href="#apidoc.element.maxmind.utils.concat2" id="apidoc.element.maxmind.utils.concat2">
+        function <span class="apidocSignatureSpan">maxmind.utils.</span>concat2
+        <span class="apidocSignatureSpan">(a, b)</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">concat2 = function (a, b) {
+  return (a &lt;&lt; 8) | b;
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">...
+var packed = 0;
+
+// The size can be 0, 1, 2, or 3.
+
+// If the size is 0, the pointer is built by appending the next byte to the last
+// three bits to produce an 11-bit value.
+if (pointerSize === 0) {
+  packed = utils.<span class="apidocCodeKeywordSpan">concat2</span>(ctrlByte &amp; 7, this.db[offset]);
+
+// If the size is 1, the pointer is built by appending the next two bytes to the
+// last three bits to produce a 19-bit value + 2048.
+} else if (pointerSize === 1) {
+  packed = utils.concat3(ctrlByte &amp; 7, this.db[offset], this.db[offset + 1]);
+
+// If the size is 2, the pointer is built by appending the next three bytes to the
+...</pre></li>
+    </ul>
+
+
+
+    <h2>
+        <a href="#apidoc.element.maxmind.utils.concat3" id="apidoc.element.maxmind.utils.concat3">
+        function <span class="apidocSignatureSpan">maxmind.utils.</span>concat3
+        <span class="apidocSignatureSpan">(a, b, c)</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">concat3 = function (a, b, c) {
+  return (a &lt;&lt; 16) | (b &lt;&lt; 8) | c;
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">...
+if (size === 30)
+  return cursor(285 + this.db.readUInt16BE(offset, false), offset + 2);
+
+// At this point `size` is always 31.
+// If the value is 31, then the size is 65,821 + *the next three bytes after the
+// type specifying bytes as a single unsigned integer*.
+return cursor(
+  65821 + utils.<span class="apidocCodeKeywordSpan">concat3</span>(this.db[offset], this.db[offset + 1], this.db[offset + 2]),
+  offset + 3
+);
+};
+
+
+Decoder.prototype.decodeBytes = function(offset, size) {
+return this.db.slice(offset, offset + size);
+...</pre></li>
+    </ul>
+
+
+
+    <h2>
+        <a href="#apidoc.element.maxmind.utils.concat4" id="apidoc.element.maxmind.utils.concat4">
+        function <span class="apidocSignatureSpan">maxmind.utils.</span>concat4
+        <span class="apidocSignatureSpan">(a, b, c, d)</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">concat4 = function (a, b, c, d) {
+  return (a &lt;&lt; 24) | (b &lt;&lt; 16) | (c &lt;&lt; 8) | d;
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">...
+// last three bits to produce a 19-bit value + 2048.
+} else if (pointerSize === 1) {
+  packed = utils.concat3(ctrlByte &amp; 7, this.db[offset], this.db[offset + 1]);
+
+// If the size is 2, the pointer is built by appending the next three bytes to the
+// last three bits to produce a 27-bit value + 526336.
+} else if (pointerSize === 2) {
+  packed = utils.<span class="apidocCodeKeywordSpan">concat4</span>(ctrlByte &amp; 7, this.db[offset], this.db[offset + 1], this
+.db[offset + 2]);
+
+// At next point `size` is always 3.
+// Finally, if the size is 3, the pointer's value is contained in the next four
+// bytes as a 32-bit value. In this case, the last three bits of the control byte
+// are ignored.
+} else {
+  packed = this.db.readUInt32BE(offset, true);
+...</pre></li>
+    </ul>
+
+
+
+
+</div>
+
+<div class="apidocFooterDiv">
+    [ this document was created with
+    <a href="https://github.com/kaizhu256/node-utility2" target="_blank">utility2</a>
+    ]
+</div>
+</div>
+</body></html>
